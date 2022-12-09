@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Formular</title>
+  </head>
+  <body>
+    <header id="header">
+      <h1>Prenájom haly</h1>
+    </header>
+    <section class="main-div">
+      <h2>Vaše osobné údaje a objednávka</h2>
+      <form
+        action="https://form2mail.hynix.sk/form2mail.php"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input
+          type="hidden"
+          name="apikey"
+          value="e1d78086c9349c34827f337ac17c8dcc"
+        />
+        <input type="hidden" name="from" value="lvisvarda@gmail.com" />
+        <input type="hidden" name="sender" value="lvisvarda@gmail.com" />
+        <input type="hidden" name="to" value="feistu01@gmail.com" />
+        <input type="hidden" name="subject" value="Zadanie 2" />
+        <input
+          type="hidden"
+          name="redirectOk"
+          value="https://webte1.fei.stuba.sk/~xvisvardal/mamradzadanie2/"
+        />
+        <input
+          type="hidden"
+          name="redirectFalse"
+          value="https://webte1.fei.stuba.sk/~xvisvardal/mamradzadanie2/"
+        />
+        <div class="columns-2-div">
+          <div class="inputs-div">
+            <label for="name">* Meno</label>
+            <div class="counter-div">
+              <input
+                type="text"
+                id="name"
+                placeholder="Lukáš"
+                name="name"
+                maxlength="20"
+                onkeyup="setCounterNumber('name', 'counter1');"
+                onkeydown="setCounterNumber('name', 'counter1');"
+                onmouseout="setCounterNumber('name','counter1');"
+                required
+              />
+              <p id="counter1">0/20</p>
+            </div>
+            <label id="lblname" style="color: red; display: none"
+              >Zadaj meno</label
+            >
+          </div>
+
+          <div class="inputs-div">
+            <label for="surname">* Priezvisko</label>
+            <div class="counter-div">
+              <input
+                type="text"
+                id="surname"
+                placeholder="Višvarda"
+                name="surname"
+                maxlength="20"
+                onkeyup="setCounterNumber('surname', 'counter2');"
+                onkeydown="setCounterNumber('surname', 'counter2');"
+                onmouseout="setCounterNumber('surname','counter2');"
+                required
+              />
+              <p id="counter2">0/20</p>
+            </div>
+            <label id="lblsurname" style="color: red; display: none"
+              >Zadaj priezvisko</label
+            >
+          </div>
+        </div>
+        <div class="columns-2-div">
+          <div class="inputs-div">
+            <label for="email">* Email</label>
+            <div class="counter-div">
+              <input
+                id="email"
+                type="email"
+                placeholder="abc@gmail.com"
+                name="email"
+                maxlength="20"
+                onkeyup="setCounterNumber('email', 'counter3');"
+                onkeydown="setCounterNumber('email', 'counter3');"
+                onmouseout="setCounterNumber('email','counter3');"
+                required
+              />
+              <p id="counter3">0/20</p>
+            </div>
+            <label id="lblemail" style="color: red; display: none"
+              >Nesprávne zadaný mail</label
+            >
+          </div>
+          <div class="inputs-div">
+            <label for="email">* Telefonne cislo</label>
+            <div class="counter-div">
+              <input
+                id="mobile-number"
+                type="text"
+                placeholder="+123"
+                name="mobileNumber"
+                maxlength="20"
+                onkeyup="setCounterNumber('mobile-number', 'counter7');"
+                onkeydown="setCounterNumber('mobile-number','counter7');"
+                onmouseout="setCounterNumber('mobile-number','counter7');"
+                required
+              />
+              <p id="counter7">0/20</p>
+            </div>
+            <label id="lblmobile" style="color: red; display: none"
+              >Nesprávne zadane cislo</label
+            >
+          </div>
+        </div>
+        <p>Pohlavie</p>
+        <div class="radio-div">
+          <label class="container"
+            >Muž
+            <input
+              type="radio"
+              checked="checked"
+              id="male"
+              name="gender"
+              value="Muž"
+            />
+            <span class="checkmark"></span>
+          </label>
+          <label class="container"
+            >Žena
+            <input type="radio" id="female" name="gender" value="Žena" />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="columns-2-div">
+          <div class="inputs-div">
+            <label for="age">* Vek</label>
+            <div class="counter-div">
+              <input
+                id="age"
+                type="number"
+                placeholder="18"
+                name="age"
+                oninput="javascript: if (this.value.length > 20) this.value = this.value.slice(0, this.maxLength);"
+                onkeyup="setCounterNumber('age', 'counter4');"
+                onkeydown="setCounterNumber('age', 'counter4');"
+                onmouseout="setCounterNumber('age','counter4');"
+                required
+                min="0"
+              />
+              <p id="counter4">0/20</p>
+            </div>
+            <label id="lblage" style="color: red; display: none"
+              >Zadaj správny vek, ktorý sa zhoduje s dátumom</label
+            >
+          </div>
+          <div class="inputs-div">
+            <label for="date">* Dátum narodenia</label>
+            <input type="date" id="date" name="date" required />
+            <label id="lbldate" style="color: red; display: none"
+              >Zadaj správny datum, ktorý sa zhoduje s vekom</label
+            >
+          </div>
+        </div>
+        <div class="columns-3-div">
+          <div class="inputs-div">
+            <label for="select-1">Šport</label>
+            <select name="sport" id="select-1">
+              <option value="Florball">Florball</option>
+              <option value="Futball">Futball</option>
+            </select>
+          </div>
+
+          <div class="inputs-div">
+            <label for="select-2">Náčinie</label>
+            <select name="tools" id="select-2">
+              <option value="Hokejky">Hokejky</option>
+              <option value="Bránky">Bránky</option>
+            </select>
+          </div>
+
+          <div class="inputs-div">
+            <label for="select-3">Hala</label>
+            <select name="hall" id="select-3">
+              <option value="Petržalka">Petržalka</option>
+              <option value="Ružinov">Ružinov</option>
+            </select>
+          </div>
+        </div>
+        <p>Máte zlavový kód?</p>
+        <div class="radio-div">
+          <label class="container"
+            >Áno
+            <input type="radio" id="1" name="code" value="Áno" />
+            <span class="checkmark"></span>
+          </label>
+          <label class="container"
+            >Nie
+            <input
+              type="radio"
+              checked="checked"
+              id="2"
+              name="code"
+              value="Nie"
+            />
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="inputs-div-code" style="display: none">
+          <label for="age">Kupón</label>
+          <div class="counter-div">
+            <input
+              id="code"
+              type="text"
+              placeholder="1234"
+              name="codeText"
+              maxlength="20"
+              onkeyup="setCounterNumber('code', 'counter5');"
+              onkeydown="setCounterNumber('code', 'counter5');"
+              onmouseout="setCounterNumber('code','counter5');"
+            />
+            <p id="counter5">0/20</p>
+          </div>
+        </div>
+        <p>Účel prenájmu:</p>
+        <div>
+          <label class="container"
+            >Súkromná akcia
+            <input
+              type="checkbox"
+              id="answer1"
+              name="purpose"
+              value="Súkromná akcia "
+            />
+            <span class="checkmark"></span>
+          </label>
+          <label class="container"
+            >Turnaj/Súťaž
+            <input
+              type="checkbox"
+              id="answer2"
+              name="purpose"
+              value="Turnaj/Súťaž "
+            />
+            <span class="checkmark"></span>
+          </label>
+          <label class="container"
+            >Iný, uveďte aký
+            <input
+              type="checkbox"
+              id="answer3"
+              name="purpose"
+              value="another "
+            />
+            <span class="checkmark"></span>
+          </label>
+          <div class="inputs-div-another" style="display: none">
+            <div class="counter-div">
+              <input
+                id="another-answer"
+                type="text"
+                placeholder="Odpoved"
+                name="anotherAnswer"
+                maxlength="20"
+                onkeyup="setCounterNumber('another-answer', 'counter6');"
+                onkeydown="setCounterNumber('another-answer', 'counter6');"
+                onmouseout="setCounterNumber('another-answer','counter6');"
+              />
+              <p id="counter6">0/20</p>
+            </div>
+          </div>
+        </div>
+        <div class="inputs-div">
+          <p>Poznámky</p>
+          <textarea id="notes" name="notes"></textarea>
+        </div>
+        <div>
+          <div class="button-div">
+            <button id="button" type="button" value="Odokry meno!">
+              Odokry meno!
+            </button>
+          </div>
+          <div class="inputs-div-name" style="display: none">
+            <input
+              type="text"
+              class="button-name"
+              placeholder="Lukáš Višvarda"
+              disabled
+            />
+          </div>
+        </div>
+        <div class="button-div">
+          <button type="button" class="show-modal">Zobraz podrobnosti</button>
+        </div>
+        <div class="modal">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="modal-button-div">
+                <span class="close-modal">&times;</span>
+              </div>
+              <h2>Celkový súhrn</h2>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+              <button type="submit" class="submit-button">Potvrdit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>

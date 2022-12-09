@@ -1,0 +1,365 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Rubik;
+  line-height: 1;
+  font-weight: 400;
+  color: #333;
+  min-width: 23rem;
+  height: 100%;
+  width: 100%;
+}
+
+label {
+  font-size: 1.4rem;
+}
+
+h2 {
+  padding: 2.5rem;
+  font-size: 2.4rem;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="email"] {
+  width: 100%;
+  padding: 2rem;
+  margin: 0.8rem 0;
+  margin-right: 1rem;
+  height: 2.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+select {
+  width: 100%;
+  margin: 0.8rem 0;
+  height: 4rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 1.4rem;
+  padding: 1.5rem 1.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  input[type="text"] {
+    width: 100%;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.close-modal {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 1.5rem 1.6rem;
+  background-color: #70798c;
+  color: white;
+}
+
+.modal-button-div {
+  display: flex;
+  justify-content: right;
+}
+
+.modal-body {
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-footer {
+  padding: 1.5rem;
+  background-color: #70798c;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.counter-div {
+  display: flex;
+  align-items: center;
+}
+
+#header {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #70798c;
+  color: #fff;
+  height: 9rem;
+  width: 100%;
+}
+
+.main-div {
+  border-radius: 5px;
+  background-color: #f4f4f6;
+  margin: 2rem auto;
+  width: 70%;
+  max-width: 80rem;
+  min-width: 23rem;
+  gap: 9.6rem;
+}
+
+.columns-2-div {
+  padding-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.columns-3-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media only screen and (max-width: 768px) {
+  .columns-2-div,
+  .columns-3-div {
+    display: inline;
+  }
+}
+.inputs-div,
+.inputs-div-code,
+.inputs-div-another {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.inputs-div-name {
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.button-div {
+  display: flex;
+  justify-content: center;
+}
+
+.inputs-div:last-child {
+  padding-bottom: 1.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .inputs-div {
+    padding: 0 1.5rem;
+    padding-top: 1.5rem;
+  }
+}
+
+#notes {
+  width: 100%;
+  height: 10rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.radio-div {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.submit-button,
+.show-modal,
+#button {
+  appearance: none;
+  background-color: #656c7c;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-bottom: 2rem;
+}
+
+.submit-button:focus:not(:focus-visible):not(.focus-visible),
+.show-modal:focus:not(:focus-visible):not(.focus-visible),
+#button:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.submit-button:hover,
+.show-modal:hover,
+#button:hover {
+  background-color: #5a5f6d;
+}
+
+.submit-button:focus,
+.show-modal:focus,
+#button:focus {
+  box-shadow: #5a5f6d 0 0 0 3px;
+  outline: none;
+}
+
+.submit-button:disabled,
+.show-modal:disabled,
+#button:disabled {
+  background-color: #5a5f6d;
+  border-color: rgba(27, 31, 35, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: default;
+}
+
+.button-name {
+  width: 30% !important;
+  height: 2.6rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.container {
+  margin-left: 1.6rem;
+  display: block;
+  position: relative;
+  padding-left: 3.5rem;
+  margin-bottom: 1.2rem;
+  cursor: pointer;
+  font-size: 1.4rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.radio-div .checkmark {
+  border-radius: 50%;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #656c7c;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #656c7c;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 0.4rem;
+  width: 0.4rem;
+  height: 0.9rem;
+  border: solid white;
+  border-width: 0 0.3rem 0.3rem 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.radio-div .container .checkmark::after {
+  top: 0.4rem;
+  left: 0.4rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: white;
+}
